@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0B0F19;
+    color: #E8EDF5;
+    font-family: 'Syne', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B0F19;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E2D47;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00D4FF;
+  }
+}
+
+@layer components {
+  .btn-ps {
+    @apply bg-ps hover:bg-psLight text-white font-display font-semibold tracking-wide px-6 py-3 rounded-lg transition-all duration-200 hover:shadow-ps;
+  }
+  .btn-xbox {
+    @apply bg-xbox hover:bg-xboxLight text-white font-display font-semibold tracking-wide px-6 py-3 rounded-lg transition-all duration-200 hover:shadow-xbox;
+  }
+  .btn-neon {
+    @apply border border-neon text-neon hover:bg-neon hover:text-bg font-display font-semibold tracking-wide px-6 py-3 rounded-lg transition-all duration-200 hover:shadow-neon;
+  }
+  .card-gaming {
+    @apply bg-card border border-border rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card;
+  }
+  .glow-ps {
+    box-shadow: 0 0 20px rgba(0, 112, 204, 0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .glow-xbox {
+    box-shadow: 0 0 20px rgba(16, 124, 16, 0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .text-gradient-ps {
+    background: linear-gradient(135deg, #00A8FF, #0070CC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-xbox {
+    background: linear-gradient(135deg, #52B043, #107C10);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-neon {
+    background: linear-gradient(135deg, #00D4FF, #7B2FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Rajdhani', sans-serif;
+  }
+  .font-mono-game {
+    font-family: 'Share Tech Mono', monospace;
+  }
+}
+
+/* Overlay for cart drawer */
+.overlay-enter {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
